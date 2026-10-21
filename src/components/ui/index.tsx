@@ -10,4 +10,4 @@ export function Field({label,error,suffix,...props}:InputHTMLAttributes<HTMLInpu
 }
 export function ScoreBar({label,score}:{label:string;score:number}) {return <div className="score-bar"><div><span>{label}</span><strong>{score}<small> / 100</small></strong></div><div className="bar-track"><div style={{width:`${score}%`}}/></div></div>;}
 export function Status({score}:{score:number}) { return <Badge tone={score>=75?'green':score>=50?'amber':'gray'}>{score>=75?'양호':score>=50?'개선 필요':'집중 관리'}</Badge>; }
-export const money=(value:number)=>new Intl.NumberFormat('ko-KR',{maximumFractionDigits:1}).format(value);
+export const money=(value:number)=>new Intl.NumberFormat('ko-KR',{maximumFractionDigits:4}).format(value);
